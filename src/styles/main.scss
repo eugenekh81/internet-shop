@@ -2,6 +2,359 @@
 @import "fonts";
 @import "typography";
 
-body {
-  background: $c-gray;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.main__page {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1140px;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.top__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 55px 0 60px;
+
+  &--logo {
+
+    &--text {
+      position: relative;
+      margin: 0;
+      color: #e24545;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 30px;
+
+      & span {
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      &::after {
+        display: block;
+        content: "";
+        width: 10px;
+        height: 2px;
+        background-color: #e45151;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    &--subtitle {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 15px;
+      color: #444;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+    }
+  }
+
+  &--nav {
+    margin-right: -170px;
+    &--list {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      align-items: center;
+    }
+
+    &--link {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 14px;
+      color: #444444;
+
+      &--active {
+        position: relative;
+        color: #e24545;
+
+        &::after {
+          display: block;
+          content: "";
+          width: 10px;
+          height: 2px;
+          background-color: #e45151;
+          position: absolute;
+          bottom: -6px;
+          left: 0;
+        }
+      }
+
+      &--search {
+        &::before {
+          display: flex;
+          content: "\f002";
+          font-family: 'FontAwesome';
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &--price-box {
+    position: relative;
+    font-family: 'Montserrat', serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 15px;
+    border: 2px solid rgb(68, 68, 68);
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 25px;
+
+    &--shopping-bag {
+      &::before {
+        display: inline-block;
+        margin-right: 8px;
+        content: "\f290";
+        font-style: normal;
+        font-family: 'FontAwesome';
+        text-decoration: line-through;
+        font-size: 14px;
+        color: #e24545;
+      }
+    }
+
+    &--outline {
+      position: absolute;
+      height: 27px;
+      width: 27px;
+      background-color: #fff;
+      border-radius: 50%;
+      top: 50%;
+      right: -14px;
+      transform: translateY(-50%);
+
+      &--circle {
+        height: 17px;
+        width: 17px;
+        margin-top: 5px;
+        margin-left: 5px;
+        background-color: #222;
+        border-radius: 50%;
+        
+        font-family: 'Montserrat';
+        font-weight: 400;
+        color: #f0f0f0;
+        font-size: 12px;
+        line-height: 17px;
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.wishlist {
+  background-image: url(https://danya-prohvat.github.io/MyPortfolio/shopPage/img/phone.jpg);
+  background-size: cover;
+  
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 30px;
+    color:#222;
+    text-transform: uppercase;
+  }
+
+  &__path {
+    margin: 0;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #888;
+    font-size: 14px;
+    line-height: 16px;
+
+    text-transform: uppercase;
+
+    & span {
+      color: #222;
+    }
+  }
+}
+
+.main__catalog {
+  padding: 50px 0 110px;
+
+  &--search {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    
+    &--field {
+      height: 40px;
+      width: 400px;
+
+      outline: 0;
+      padding-left: 30px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      color: #8f8f8f;
+
+      font-family: 'Montserrat';
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 400;
+    }
+
+    &--button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border: 2px solid #444;
+      height: 40px;
+      width: 120px;
+      background-color: #fff;
+      
+      font-family: 'Montserrat';
+      font-size: 12px;
+      line-height: 12px;
+
+
+      text-decoration: none;
+      text-transform: uppercase;
+
+      color: #000;
+    }
+  }
+
+  &--content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.product-card {
+  margin-bottom: 50px;
+  padding-top: 30px;
+  width: 244px;
+  height: 393px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;;
+
+  border: 1px solid #eee;
+
+  &__img {
+    position: relative;
+    margin: 0 auto 35px;
+
+    & img {
+      margin: 0;
+      padding: 0;
+      border: 0;
+
+      max-width: 200px;
+      max-height: 180px;
+      vertical-align: top;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 2px;
+      width: 10px;
+      background-color: #e24545;
+    }
+  }
+
+  &__text {
+    margin: 0 auto;
+    flex-basis: 100px;
+
+    & h3 {
+      margin: 0 0 12px;
+      font-family: 'Montserrat';
+      font-size: 16px;
+      line-height: 22px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0;
+      margin-bottom: 25px;
+      font-weight: 600;
+      text-align: center;
+      color: #e24545;
+
+      span {
+        color: #888;
+        font-size: 13px;
+        line-height: 15px;
+        text-decoration: line-through;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__button {
+    position: relative;
+    margin: 0 auto -1px;
+    height: 42px;
+    width: 42px;
+
+    transition: .3s all ease;
+
+    border: 1px solid #eee;
+    &:hover {
+      background-color: #e24545;
+      &::before {
+        color: #fff;
+      }
+    };
+
+    &::before {
+      position: absolute;
+      display: flex;
+      content: "\f07a";
+      font-family: 'FontAwesome';
+      text-decoration: none;
+      font-size: 14px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #444;
+      cursor: pointer;
+
+      transition: .3s all ease;
+    }
+  }
 }
